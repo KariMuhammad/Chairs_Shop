@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="images/category-banner1.jpg"
+    />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Normalize Library -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- Font awesome 6 -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <script
+      src="https://kit.fontawesome.com/a363edd0e0.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Main Style -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/checkout.css" />
+    <title>Checkout - Chairs Shop</title>
+  </head>
+
+  <body>
+    <!-- header -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="logo" /></a>
+        </div>
+        <nav class="links">
+          <i class="fa-solid fa-bars"></i>
+          <ul class="list-links">
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="store.html">Store</a>
+            </li>
+            <li>
+              <a href="favourite.html">Wishlist</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="util-user">
+          <i class="fa-solid fa-search"></i>
+          <i class="fa-solid fa-user"></i>
+          <a href="cart.html">
+            <i class="fa-solid fa-cart-shopping" data-items="0"></i>
+            <span>Your bag</span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- /.header -->
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Checkout</h1>
+        <p>Complete your order</p>
+      </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+      <div class="container">
+        <div class="checkout-layout">
+          <!-- Checkout Form -->
+          <div class="checkout-form">
+            <!-- Shipping Information -->
+            <div class="form-section">
+              <h2>
+                <span class="step-number">1</span>
+                Shipping Information
+              </h2>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>First Name *</label>
+                  <input type="text" id="firstName" required />
+                </div>
+                <div class="form-group">
+                  <label>Last Name *</label>
+                  <input type="text" id="lastName" required />
+                </div>
+                <div class="form-group full-width">
+                  <label>Email Address *</label>
+                  <input type="email" id="email" required />
+                </div>
+                <div class="form-group full-width">
+                  <label>Phone Number *</label>
+                  <input type="tel" id="phone" required />
+                </div>
+                <div class="form-group full-width">
+                  <label>Street Address *</label>
+                  <input type="text" id="address" required />
+                </div>
+                <div class="form-group">
+                  <label>City *</label>
+                  <input type="text" id="city" required />
+                </div>
+                <div class="form-group">
+                  <label>State/Province *</label>
+                  <input type="text" id="state" required />
+                </div>
+                <div class="form-group">
+                  <label>ZIP/Postal Code *</label>
+                  <input type="text" id="zip" required />
+                </div>
+                <div class="form-group">
+                  <label>Country *</label>
+                  <select id="country" required>
+                    <option value="">Select Country</option>
+                    <option value="US">United States</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="CA">Canada</option>
+                    <option value="AU">Australia</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Billing Information -->
+            <div class="form-section">
+              <h2>
+                <span class="step-number">2</span>
+                Billing Information
+              </h2>
+              <div class="checkbox-group">
+                <label>
+                  <input type="checkbox" id="sameAsShipping" checked />
+                  <span>Same as shipping address</span>
+                </label>
+              </div>
+              <div id="billingFields" style="display: none">
+                <div class="form-grid">
+                  <div class="form-group full-width">
+                    <label>Street Address *</label>
+                    <input type="text" id="billingAddress" />
+                  </div>
+                  <div class="form-group">
+                    <label>City *</label>
+                    <input type="text" id="billingCity" />
+                  </div>
+                  <div class="form-group">
+                    <label>State/Province *</label>
+                    <input type="text" id="billingState" />
+                  </div>
+                  <div class="form-group">
+                    <label>ZIP/Postal Code *</label>
+                    <input type="text" id="billingZip" />
+                  </div>
+                  <div class="form-group">
+                    <label>Country *</label>
+                    <select id="billingCountry">
+                      <option value="">Select Country</option>
+                      <option value="US">United States</option>
+                      <option value="UK">United Kingdom</option>
+                      <option value="CA">Canada</option>
+                      <option value="AU">Australia</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Payment Method -->
+            <div class="form-section">
+              <h2>
+                <span class="step-number">3</span>
+                Payment Method
+              </h2>
+              <div class="payment-methods">
+                <label class="payment-option">
+                  <input type="radio" name="payment" value="card" checked />
+                  <div class="payment-card">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Credit/Debit Card</span>
+                  </div>
+                </label>
+                <label class="payment-option">
+                  <input type="radio" name="payment" value="paypal" />
+                  <div class="payment-card">
+                    <i class="fa-brands fa-paypal"></i>
+                    <span>PayPal</span>
+                  </div>
+                </label>
+                <label class="payment-option">
+                  <input type="radio" name="payment" value="cod" />
+                  <div class="payment-card">
+                    <i class="fa-solid fa-money-bill"></i>
+                    <span>Cash on Delivery</span>
+                  </div>
+                </label>
+              </div>
+
+              <!-- Card Details -->
+              <div id="cardDetails" class="card-details">
+                <div class="form-grid">
+                  <div class="form-group full-width">
+                    <label>Card Number *</label>
+                    <input
+                      type="text"
+                      id="cardNumber"
+                      placeholder="1234 5678 9012 3456"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label>Expiry Date *</label>
+                    <input type="text" id="expiryDate" placeholder="MM/YY" />
+                  </div>
+                  <div class="form-group">
+                    <label>CVV *</label>
+                    <input type="text" id="cvv" placeholder="123" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Summary -->
+          <div class="order-summary">
+            <h3>Order Summary</h3>
+
+            <div class="summary-items" id="summaryItems">
+              <!-- Items will be loaded by JavaScript -->
+            </div>
+
+            <div class="summary-totals">
+              <div class="summary-row">
+                <span>Subtotal:</span>
+                <span id="summarySubtotal">$0.00</span>
+              </div>
+              <div class="summary-row">
+                <span>Shipping:</span>
+                <span id="summaryShipping">$0.00</span>
+              </div>
+              <div class="summary-row">
+                <span>Tax:</span>
+                <span id="summaryTax">$0.00</span>
+              </div>
+              <div class="summary-total">
+                <span>Total:</span>
+                <span id="summaryTotal">$0.00</span>
+              </div>
+            </div>
+
+            <button class="btn-place-order" id="placeOrderBtn">
+              <i class="fa- solid fa-lock"></i>
+              Place Order
+            </button>
+
+            <div class="secure-checkout">
+              <i class="fa-solid fa-shield-halved"></i>
+              Secure Checkout
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="content">
+          <div class="about">
+            <img src="images/footer-logo.png" alt="logo" />
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. LoremIpsum has been the industry's standard dummy text
+              ever since the 1500s, Lorem Ipsum is simply dummy.
+            </p>
+            <img src="images/cms-footer-1.png" alt="" />
+            <img src="images/cms-footer-2.png" alt="" />
+          </div>
+
+          <div class="info">
+            <h5>information</h5>
+            <ul>
+              <li>about us</li>
+              <li>Delivery Information</li>
+              <li>Privacy Policy</li>
+              <li>Terms & Conditions</li>
+              <li>Site Map</li>
+            </ul>
+          </div>
+
+          <div class="my-account">
+            <h5>my account</h5>
+            <ul>
+              <li>my account</li>
+              <li>order history</li>
+              <li>wish list</li>
+              <li>newsletter</li>
+              <li>returns</li>
+            </ul>
+          </div>
+
+          <div class="subscribe">
+            <h5>subscribe</h5>
+            <div class="form">
+              <input
+                type="email"
+                name="email"
+                id="newsletterEmail"
+                placeholder="Enter your email address"
+              />
+              <i class="fa-solid fa-paper-plane"></i>
+            </div>
+
+            <ul class="social">
+              <li><i class="fa-brands fa-facebook"></i></li>
+              <li><i class="fa-brands fa-instagram"></i></li>
+              <li><i class="fa-brands fa-twitter"></i></li>
+              <li><i class="fa-brands fa-linkedin"></i></li>
+              <li><i class="fa-brands fa-whatsapp"></i></li>
+            </ul>
+          </div>
+
+          <div class="foot">
+            <p>Powered By OpenCart Rocker - Furniture Store © 2022</p>
+            <div class="cards">
+              <img src="images/master_card.png" alt="" />
+              <img src="images/visa.png" alt="" />
+              <img src="images/google_wallet.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.footer -->
+
+    <script src="js/nav.js"></script>
+    <script src="js/cart-manager.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/checkout.js"></script>
+  </body>
+</html>

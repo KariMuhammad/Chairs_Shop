@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="images/category-banner1.jpg"
+    />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Normalize Library -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- Font awesome 6 -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <script
+      src="https://kit.fontawesome.com/a363edd0e0.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Main Style -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/store.css" />
+    <title>Store - Chairs Shop</title>
+  </head>
+
+  <body>
+    <!-- header -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="logo" /></a>
+        </div>
+        <nav class="links">
+          <i class="fa-solid fa-bars"></i>
+          <ul class="list-links">
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="store.html" class="active">Store</a>
+            </li>
+            <li>
+              <a href="favourite.html">Wishlist</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="util-user">
+          <i
+            class="fa-solid fa-search"
+            id="searchToggle"
+            style="cursor: pointer"
+          ></i>
+          <a
+            href="login.html"
+            id="userIcon"
+            style="color: inherit; text-decoration: none; cursor: pointer"
+          >
+            <i class="fa-solid fa-user"></i>
+          </a>
+          <a
+            href="cart.html"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              color: inherit;
+              text-decoration: none;
+            "
+          >
+            <i class="fa-solid fa-cart-shopping" data-items="0"></i>
+            <span>Your bag</span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- /.header -->
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Our Store</h1>
+        <p>Browse our premium collection of chairs</p>
+      </div>
+    </section>
+
+    <!-- Store Section -->
+    <section class="store-section">
+      <div class="container">
+        <div class="store-layout">
+          <!-- Sidebar Filters -->
+          <aside class="filters-sidebar">
+            <div class="filter-toggle">
+              <h3>Filters</h3>
+              <i class="fa-solid fa-sliders"></i>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="filter-group">
+              <h4>Categories</h4>
+              <div class="filter-options">
+                <label>
+                  <input type="checkbox" name="category" value="all" checked />
+                  <span>All Products</span>
+                </label>
+                <label>
+                  <input type="checkbox" name="category" value="wooden" />
+                  <span>Wooden Chair</span>
+                </label>
+                <label>
+                  <input type="checkbox" name="category" value="plastic" />
+                  <span>Plastic Chair</span>
+                </label>
+                <label>
+                  <input type="checkbox" name="category" value="office" />
+                  <span>Office Chair</span>
+                </label>
+                <label>
+                  <input type="checkbox" name="category" value="armoires" />
+                  <span>Armoires</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Price Filter -->
+            <div class="filter-group">
+              <h4>Price Range</h4>
+              <div class="price-range">
+                <input
+                  type="range"
+                  id="priceRange"
+                  min="0"
+                  max="500"
+                  value="500"
+                />
+                <div class="price-labels">
+                  <span>$0</span>
+                  <span id="maxPrice">$500</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Rating Filter -->
+            <div class="filter-group">
+              <h4>Rating</h4>
+              <div class="filter-options">
+                <label>
+                  <input type="radio" name="rating" value="0" checked />
+                  <span>All Ratings</span>
+                </label>
+                <label>
+                  <input type="radio" name="rating" value="4" />
+                  <span>4★ & above</span>
+                </label>
+                <label>
+                  <input type="radio" name="rating" value="3" />
+                  <span>3★ & above</span>
+                </label>
+              </div>
+            </div>
+
+            <button class="clear-filters">Clear All Filters</button>
+          </aside>
+
+          <!-- Products Area -->
+          <div class="products-area">
+            <!-- Toolbar -->
+            <div class="products-toolbar">
+              <div class="results-count">
+                <span id="productCount">0</span> Products Found
+              </div>
+
+              <div class="toolbar-controls">
+                <div class="sort-dropdown">
+                  <select id="sortBy">
+                    <option value="default">Default</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="name">Name A-Z</option>
+                    <option value="rating">Highest Rated</option>
+                  </select>
+                </div>
+
+                <div class="view-toggle">
+                  <button class="view-btn active" data-view="grid">
+                    <i class="fa-solid fa-grip"></i>
+                  </button>
+                  <button class="view-btn" data-view="list">
+                    <i class="fa-solid fa-list"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Active Filters -->
+            <div class="active-filters" id="activeFilters"></div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+              <!-- Products will be loaded here by JavaScript -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+              <!-- Pagination buttons will be added by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="content">
+          <div class="about">
+            <img src="images/footer-logo.png" alt="logo" />
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. LoremIpsum has been the industry's standard dummy text
+              ever since the 1500s, Lorem Ipsum is simply dummy.
+            </p>
+            <img src="images/cms-footer-1.png" alt="" />
+            <img src="images/cms-footer-2.png" alt="" />
+          </div>
+
+          <div class="info">
+            <h5>information</h5>
+            <ul>
+              <li>about us</li>
+              <li>Delivery Information</li>
+              <li>Privacy Policy</li>
+              <li>Terms & Conditions</li>
+              <li>Site Map</li>
+            </ul>
+          </div>
+
+          <div class="my-account">
+            <h5>my account</h5>
+            <ul>
+              <li>my account</li>
+              <li>order history</li>
+              <li>wish list</li>
+              <li>newsletter</li>
+              <li>returns</li>
+            </ul>
+          </div>
+
+          <div class="subscribe">
+            <h5>subscribe</h5>
+            <div class="form">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email address"
+              />
+              <i class="fa-solid fa-paper-plane"></i>
+            </div>
+
+            <ul class="social">
+              <li><i class="fa-brands fa-facebook"></i></li>
+              <li><i class="fa-brands fa-instagram"></i></li>
+              <li><i class="fa-brands fa-twitter"></i></li>
+              <li><i class="fa-brands fa-linkedin"></i></li>
+              <li><i class="fa-brands fa-whatsapp"></i></li>
+            </ul>
+          </div>
+
+          <div class="foot">
+            <p>Powered By OpenCart Rocker - Furniture Store © 2022</p>
+            <div class="cards">
+              <img src="images/master_card.png" alt="" />
+              <img src="images/visa.png" alt="" />
+              <img src="images/google_wallet.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.footer -->
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+      <div class="search-container">
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search for products..."
+            autofocus
+          />
+          <i class="fa-solid fa-xmark search-close" id="searchClose"></i>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="quick-view-modal" id="quickViewModal">
+      <div class="quick-view-content">
+        <div class="quick-view-close" id="quickViewClose">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="quick-view-grid">
+          <div class="quick-view-image">
+            <img id="quickViewImage" src="" alt="Product" />
+          </div>
+          <div class="quick-view-details">
+            <h2 id="quickViewName"></h2>
+            <div class="rating" id="quickViewRating"></div>
+            <div class="price" id="quickViewPrice"></div>
+            <div class="description" id="quickViewDescription"></div>
+            <div class="quick-view-options">
+              <label>Size:</label>
+              <select id="quickViewSize">
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+              </select>
+              <label>Color:</label>
+              <select id="quickViewColor">
+                <option>Brown</option>
+                <option>Black</option>
+                <option>White</option>
+                <option>Gray</option>
+              </select>
+            </div>
+            <div class="quick-view-actions">
+              <button class="btn-quick-add-cart" id="quickViewAddCart">
+                Add to Cart
+              </button>
+              <a href="#" class="btn-view-full" id="quickViewFull"
+                >View Full Details</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/nav.js"></script>
+    <script src="js/cart-manager.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/store.js"></script>
+  </body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="images/category-banner1.jpg"
+    />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Normalize Library -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- Font awesome 6 -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <script
+      src="https://kit.fontawesome.com/a363edd0e0.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Main Style -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    <title>My Profile - Chairs Shop</title>
+  </head>
+
+  <body>
+    <!-- header -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="logo" /></a>
+        </div>
+        <nav class="links">
+          <i class="fa-solid fa-bars"></i>
+          <ul class="list-links">
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li class="has-mega-menu">
+              <a href="store.html">
+                Store
+                <i class="fa-solid fa-chevron-down mega-menu-arrow"></i>
+              </a>
+              <div class="mega-menu">
+                <div class="mega-menu-container">
+                  <!-- Category 1: Chairs -->
+                  <div class="mega-menu-category">
+                    <div class="category-image">
+                      <img src="images/chair1.jpg" alt="Chairs Category" />
+                    </div>
+                    <div class="category-content">
+                      <h4>Chairs</h4>
+                      <ul>
+                        <li>
+                          <a href="store.html?category=wooden">Wooden Chairs</a>
+                        </li>
+                        <li>
+                          <a href="store.html?category=office">Office Chairs</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Category 2: Tables -->
+                  <div class="mega-menu-category">
+                    <div class="category-image">
+                      <img src="images/chair3.jpg" alt="Tables Category" />
+                    </div>
+                    <div class="category-content">
+                      <h4>Tables</h4>
+                      <ul>
+                        <li>
+                          <a href="store.html?category=study">Study Tables</a>
+                        </li>
+                        <li>
+                          <a href="store.html?category=coffee">Coffee Tables</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Category 3: Storage -->
+                  <div class="mega-menu-category">
+                    <div class="category-image">
+                      <img src="images/chair4.jpg" alt="Storage Category" />
+                    </div>
+                    <div class="category-content">
+                      <h4>Storage</h4>
+                      <ul>
+                        <li>
+                          <a href="store.html?category=armoires">Armoires</a>
+                        </li>
+                        <li>
+                          <a href="store.html?category=shelves">Shelves</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="favourite.html">Wishlist</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="util-user">
+          <i
+            class="fa-solid fa-search"
+            id="searchToggle"
+            style="cursor: pointer"
+          ></i>
+          <a
+            href="login.html"
+            id="userIcon"
+            style="color: inherit; text-decoration: none; cursor: pointer"
+          >
+            <i class="fa-solid fa-user"></i>
+          </a>
+          <a
+            href="cart.html"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              color: inherit;
+              text-decoration: none;
+            "
+          >
+            <i class="fa-solid fa-cart-shopping" data-items="0"></i>
+            <span>Your bag</span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- /.header -->
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>My Account</h1>
+        <p>Manage your profile, orders, and addresses</p>
+      </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+      <div class="container">
+        <div class="profile-layout">
+          <!-- Sidebar -->
+          <div class="profile-sidebar">
+            <div class="user-brief">
+              <div class="avatar">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <h3 id="sidebarName">Loading...</h3>
+              <p id="sidebarEmail">...</p>
+            </div>
+            <nav class="profile-nav">
+              <button class="active" data-tab="dashboard">
+                <i class="fa-solid fa-chart-line"></i> Dashboard
+              </button>
+              <button data-tab="orders">
+                <i class="fa-solid fa-box-open"></i> My Orders
+              </button>
+              <button data-tab="profile">
+                <i class="fa-solid fa-user-gear"></i> Profile Details
+              </button>
+              <button class="btn-logout" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+              </button>
+            </nav>
+          </div>
+
+          <!-- Content -->
+          <div class="profile-content">
+            <!-- Dashboard Tab -->
+            <div class="tab-content active" id="dashboard">
+              <div class="welcome-box">
+                <h2>Hello, <span id="welcomeName">User</span>!</h2>
+                <p>
+                  From your account dashboard you can view your recent orders,
+                  manage your shipping and billing addresses, and edit your
+                  password and account details.
+                </p>
+              </div>
+
+              <div class="dashboard-stats">
+                <div class="stat-card">
+                  <div class="icon"><i class="fa-solid fa-box"></i></div>
+                  <div class="info">
+                    <h4>Total Orders</h4>
+                    <p>0</p>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="icon"><i class="fa-regular fa-clock"></i></div>
+                  <div class="info">
+                    <h4>Pending</h4>
+                    <p>0</p>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="icon"><i class="fa-regular fa-heart"></i></div>
+                  <div class="info">
+                    <h4>Wishlist</h4>
+                    <p id="wishlistStat">0</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Orders Tab -->
+            <div class="tab-content" id="orders">
+              <h2>My Orders</h2>
+              <div class="orders-list">
+                <div class="empty-state">
+                  <i class="fa-solid fa-box-open"></i>
+                  <p>You haven't placed any orders yet.</p>
+                  <a href="store.html" class="btn-shop">Start Shopping</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Profile Details Tab -->
+            <div class="tab-content" id="profile">
+              <h2>Profile Details</h2>
+              <div class="profile-details-form">
+                <div class="form-group">
+                  <label>Full Name</label>
+                  <input
+                    type="text"
+                    id="profileName"
+                    readonly
+                    class="readonly-input"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Email Address</label>
+                  <input
+                    type="email"
+                    id="profileEmail"
+                    readonly
+                    class="readonly-input"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Member Since</label>
+                  <input
+                    type="text"
+                    id="joinDate"
+                    readonly
+                    class="readonly-input"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="content">
+          <div class="about">
+            <img src="images/footer-logo.png" alt="logo" />
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. LoremIpsum has been the industry's standard dummy text
+              ever since the 1500s, Lorem Ipsum is simply dummy.
+            </p>
+          </div>
+
+          <div class="info">
+            <h5>information</h5>
+            <ul>
+              <li>about us</li>
+              <li>Delivery Information</li>
+              <li>Privacy Policy</li>
+              <li>Terms & Conditions</li>
+              <li>Site Map</li>
+            </ul>
+          </div>
+
+          <div class="my-account">
+            <h5>my account</h5>
+            <ul>
+              <li>my account</li>
+              <li>order history</li>
+              <li>wish list</li>
+              <li>newsletter</li>
+              <li>returns</li>
+            </ul>
+          </div>
+
+          <div class="subscribe">
+            <h5>subscribe</h5>
+            <div class="form">
+              <input
+                type="email"
+                name="email"
+                id="emailSubscribe"
+                placeholder="Enter your email address"
+              />
+              <i class="fa-solid fa-paper-plane"></i>
+            </div>
+
+            <ul class="social">
+              <li><i class="fa-brands fa-facebook"></i></li>
+              <li><i class="fa-brands fa-instagram"></i></li>
+              <li><i class="fa-brands fa-twitter"></i></li>
+              <li><i class="fa-brands fa-linkedin"></i></li>
+              <li><i class="fa-brands fa-whatsapp"></i></li>
+            </ul>
+          </div>
+
+          <div class="foot">
+            <p>Powered By OpenCart Rocker - Furniture Store © 2022</p>
+            <div class="cards">
+              <img src="images/master_card.png" alt="" />
+              <img src="images/visa.png" alt="" />
+              <img src="images/google_wallet.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.footer -->
+
+    <script src="js/auth.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/profile.js"></script>
+  </body>
+</html>
